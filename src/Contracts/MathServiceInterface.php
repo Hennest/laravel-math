@@ -9,11 +9,11 @@ use Brick\Math\Exception\RoundingNecessaryException;
 
 interface MathServiceInterface
 {
-    public const LESS_THAN_FIRST_NUMBER = -1;
+    public const FIRST_NUMBER_IS_LESSER = -1;
 
-    public const EQUAL_TO_FIRST_NUMBER = 0;
+    public const THEY_ARE_EQUAL = 0;
 
-    public const GREATER_THAN_FIRST_NUMBER = 1;
+    public const FIRST_NUMBER_IS_GREATER = 1;
 
     /**
      * Adds two numbers and returns the result as a string.

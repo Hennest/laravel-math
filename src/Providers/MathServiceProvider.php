@@ -13,7 +13,7 @@ final class MathServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/math.php',
+            __DIR__ . '/../../config/math.php',
             'math'
         );
 
@@ -25,5 +25,12 @@ final class MathServiceProvider extends ServiceProvider
         $this->app->when(MathService::class)
             ->needs('$scale')
             ->giveConfig('math.scale');
+    }
+
+    public function boot(): void
+    {
+        $this->publishes([
+            __DIR__ . '/../../config/math.php' => config_path('math.php'),
+        ], 'config');
     }
 }
