@@ -7,7 +7,7 @@ namespace Hennest\Math\Tests;
 use Hennest\Math\Providers\MathServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
-class TestCase extends BaseTestCase
+abstract class TestCase extends BaseTestCase
 {
     protected function getPackageProviders($app): array
     {
