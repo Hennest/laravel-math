@@ -164,4 +164,64 @@ interface MathServiceInterface
      * @throws MathException
      */
     public function compare(float|int|string $first, float|int|string $second): int;
+
+    /**
+     * Checks if two numbers are equal.
+     *
+     * @param float|int|string $first The first number.
+     * @param float|int|string $second The second number.
+     *
+     * @return bool True if the numbers are equal, false otherwise.
+     *
+     * @throws MathException
+     */
+    public function equals(float|int|string $first, float|int|string $second): bool;
+
+    /**
+     * Checks if the first number is greater than the second number.
+     *
+     * @param float|int|string $first The first number.
+     * @param float|int|string $second The second number.
+     *
+     * @return bool True if the first number is greater than the second number, false otherwise.
+     *
+     * @throws MathException
+     */
+    public function greaterThan(float|int|string $first, float|int|string $second): bool;
+
+    /**
+     * Checks if the first number is less than the second number.
+     *
+     * @param float|int|string $first The first number.
+     * @param float|int|string $second The second number.
+     *
+     * @return bool True if the first number is less than the second number, false otherwise.
+     *
+     * @throws MathException
+     */
+    public function lessThan(float|int|string $first, float|int|string $second): bool;
+
+    /**
+     * Checks if the first number is greater than or equal to the second number.
+     *
+     * @param float|int|string $first The first number.
+     * @param float|int|string $second The second number.
+     *
+     * @return bool True if the first number is greater than or equal to the second number, false otherwise.
+     *
+     * @throws MathException
+     */
+    public function greaterThanOrEqual(float|int|string $first, float|int|string $second): bool;
+
+    /**
+     * Checks if the first number is less than or equal to the second number.
+     *
+     * @param float|int|string $first The first number.
+     * @param float|int|string $second The second number.
+     *
+     * @return bool True if the first number is less than or equal to the second number, false otherwise.
+     *
+     * @throws MathException
+     */
+    public function lessThanOrEqual(float|int|string $first, float|int|string $second): bool;
 }

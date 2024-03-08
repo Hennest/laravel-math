@@ -160,4 +160,44 @@ final readonly class MathService implements MathServiceInterface
     {
         return BigDecimal::of($first)->compareTo(BigDecimal::of($second));
     }
+
+    /**
+     * @throws MathException
+     */
+    public function equals(float|int|string $first, float|int|string $second): bool
+    {
+        return self::THEY_ARE_EQUAL === $this->compare($first, $second);
+    }
+
+    /**
+     * @throws MathException
+     */
+    public function greaterThan(float|int|string $first, float|int|string $second): bool
+    {
+        return self::FIRST_NUMBER_IS_GREATER === $this->compare($first, $second);
+    }
+
+    /**
+     * @throws MathException
+     */
+    public function lessThan(float|int|string $first, float|int|string $second): bool
+    {
+        return self::FIRST_NUMBER_IS_LESSER === $this->compare($first, $second);
+    }
+
+    /**
+     * @throws MathException
+     */
+    public function greaterThanOrEqual(float|int|string $first, float|int|string $second): bool
+    {
+        return $this->compare($first, $second) >= self::THEY_ARE_EQUAL;
+    }
+
+    /**
+     * @throws MathException
+     */
+    public function lessThanOrEqual(float|int|string $first, float|int|string $second): bool
+    {
+        return $this->compare($first, $second) <= self::THEY_ARE_EQUAL;
+    }
 }

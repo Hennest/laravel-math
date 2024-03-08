@@ -63,3 +63,29 @@ it('can compare that two numbers are equal', function (): void {
 it('can compare that first number is lesser', function (): void {
     expect($this->math->compare(2, 3))->toEqual(MathServiceInterface::FIRST_NUMBER_IS_LESSER);
 });
+
+it('can compare that the first number is equal to the second number', function (): void {
+    expect($this->math->equals(3, 3))->toBeTrue();
+});
+
+it('can compare that the first number is greater than the second number', function (): void {
+    expect($this->math->greaterThan(3, 2))->toBeTrue();
+});
+
+it('can compare that the first number is less than the second number', function (): void {
+    expect($this->math->lessThan(2, 3))->toBeTrue();
+});
+
+it('can compare that the first number is greater than or equal to the second number', function (): void {
+    expect($this->math->greaterThanOrEqual(3, 3))
+        ->toBeTrue()
+        ->and($this->math->greaterThanOrEqual(3, 2))
+        ->toBeTrue();
+});
+
+it('can compare that the first number is lesser than or equal to the second number', function (): void {
+    expect($this->math->lessThanOrEqual(2, 3))
+        ->toBeTrue()
+        ->and($this->math->lessThanOrEqual(2, 2))
+        ->toBeTrue();
+});
